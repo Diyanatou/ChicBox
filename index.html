@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChicBox — Le sac des femmes entrepreneures</title>
+
+  <!-- Tailwind CDN (pour prototypage rapide) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    :root{
+      --brand-dark: #262626;
+      --bg-light: #efeef2;
+      --accent-pink: #ff3669;
+      --accent-blue: #1000eb;
+    }
+
+    /* petites personnalisations */
+    body { background-color: var(--bg-light); color: var(--brand-dark); font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    a { text-decoration: none; }
+    /* cache la scrollbar du slider (cosmétique) */
+    #avisSlider::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-md flex items-center justify-center" style="background:var(--accent-blue);color:white;font-weight:700">CB</div>
+        <span class="text-xl font-bold" style="color:var(--brand-dark)">ChicBag</span>
+      </a>
+
+      <!-- desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#hero" class="hover:text-[var(--accent-pink)]">Accueil</a></li>
+        <li><a href="#histoire" class="hover:text-[var(--accent-pink)]">Notre histoire</a></li>
+        <li><a href="#nos-sacs" class="hover:text-[var(--accent-pink)]">Nos packaging</a></li>
+        <li><a href="#galerie" class="hover:text-[var(--accent-pink)]">Galerie</a></li>
+        <li><a href="#avis" class="hover:text-[var(--accent-pink)]">Avis</a></li>
+        <li><a href="#contact" class="hover:text-[var(--accent-pink)]">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/22890000000" target="_blank" class="hidden md:inline-block px-4 py-2 rounded-full text-white font-medium" style="background:var(--accent-pink)">WhatsApp</a>
+        <button id="menuBtn" class="md:hidden p-2 text-2xl" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars" style="color:var(--brand-dark)"></i></button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-6 pb-6 bg-white border-t">
+      <ul class="flex flex-col gap-3 pt-4">
+        <li><a href="#hero" class="block py-2">Accueil</a></li>
+        <li><a href="#histoire" class="block py-2">Notre histoire</a></li>
+        <li><a href="#nos-sacs" class="block py-2">Nos packaging</a></li>
+        <li><a href="#galerie" class="block py-2">Galerie</a></li>
+        <li><a href="#avis" class="block py-2">Avis</a></li>
+        <li><a href="#contact" class="block py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="relative h-[80vh] md:h-[85vh] flex items-center">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625209913776-15e12b3a5df1?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-[rgba(6,6,6,0.45)]"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">ChicBox — le sac pensé pour <span style="color:var(--accent-pink)">les femmes entrepreneures</span></h1>
+      <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8">Des sacs robustes et élégants pour emballer, présenter et livrer vos pagnes, accessoires et produits — conçus pour durer et mettre en valeur votre travail.</p>
+
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="#nos-sacs" class="inline-block px-6 py-3 rounded-full font-semibold text-white" style="background:var(--accent-pink);">Voir la collection</a>
+        <a href="#contact" class="inline-block px-6 py-3 rounded-full font-semibold" style="background:transparent;border:2px solid rgba(255,255,255,0.8);color:white">Contact commercial</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTRE HISTOIRE -->
+  <section id="histoire" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-bold mb-4" style="color:var(--brand-dark)">Notre mission</h2>
+        <p class="text-gray-700 mb-4">
+          Chez <span style="color:var(--accent-pink);font-weight:600">ChicBox</span>, nous aidons les femmes entrepreneures à valoriser et transporter leurs produits —
+          des pagnes aux accessoires. Nos sacs sont pensés pour <strong>protéger</strong>, <strong>présenter</strong> et <strong>faciliter la vente</strong>.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Conçus avec des matériaux résistants, des anses solides et des finitions soignées, nos sacs servent autant au marché qu'à la livraison — et gardent un style professionnel.
+        </p>
+        <a href="#nos-sacs" class="inline-block px-5 py-3 rounded-full text-white font-semibold" style="background:var(--accent-blue)">Voir les sacs pour vendeuses</a>
+      </div>
+
+      <div>
+        <img src="images/pack0.jpeg" alt="Notre histoire" class="w-full rounded-xl shadow-lg object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS SACS (search + filter + grid) -->
+  <section id="nos-sacs" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <h2 class="text-2xl font-bold" style="color:var(--brand-dark)">Nos Sacs pour entrepreneures</h2>
+
+        <div class="flex gap-3 w-full md:w-auto">
+          <input id="searchInput" type="text" placeholder="Rechercher (ex: 'wax', 'paille')" class="w-full md:w-72 px-4 py-2 rounded-lg border" />
+          <select id="categoryFilter" class="px-3 py-2 rounded-lg border">
+            <option value="all">Tous</option>
+            <option value="wax">Wax / Tissu</option>
+            <option value="cuir">Cuir</option>
+            <option value="paille">Paille</option>
+            <option value="grand">Grand format (marché)</option>
+          </select>
+        </div>
+      </div>
+   
+      <div id="bagsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="bag-card bg-white rounded-xl shadow p-4 cursor-pointer group" data-category="wax">
+          <img src="images/pack1.jpeg" alt="Sac Wax" class="w-full h-48 object-cover rounded-md mb-4 group-hover:scale-105 transition-transform">
+          <h3 class="text-lg font-semibold" style="color:var(--brand-dark)">Sac Wax Grand</h3>
+          <p class="text-sm text-gray-600 mt-2 line-clamp-2">Idéal pour emballer pagnes et articles légers ; anse renforcée pour le marché.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold" style="color:var(--accent-pink)">12 000 FCFA</div>
+            <button class="px-3 py-2 rounded-lg text-white" style="background:var(--accent-blue)">Commander</button>
+          </div>
+        </article>
+
+        <article class="bag-card bg-white rounded-xl shadow p-4 cursor-pointer group" data-category="cuir">
+          <img src="images/pack2.jpeg" alt="Sac Cuir" class="w-full h-48 object-cover rounded-md mb-4 group-hover:scale-105 transition-transform">
+          <h3 class="text-lg font-semibold" style="color:var(--brand-dark)">Sac Cuir Multi-usage</h3>
+          <p class="text-sm text-gray-600 mt-2">Robuste, élégant — parfait pour boutiques et livraisons soignées.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold" style="color:var(--accent-pink)">25 000 FCFA</div>
+            <button class="px-3 py-2 rounded-lg text-white" style="background:var(--accent-blue)">Commander</button>
+          </div>
+        </article>
+
+        <article class="bag-card bg-white rounded-xl shadow p-4 cursor-pointer group" data-category="paille">
+          <img src="images/pack3.jpeg" alt="Sac Paille" class="w-full h-48 object-cover rounded-md mb-4 group-hover:scale-105 transition-transform">
+          <h3 class="text-lg font-semibold" style="color:var(--brand-dark)">Sac Paille Marché</h3>
+          <p class="text-sm text-gray-600 mt-2">Léger et respirant — idéal pour les marchés et les présentations estivales.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold" style="color:var(--accent-pink)">8 500 FCFA</div>
+            <button class="px-3 py-2 rounded-lg text-white" style="background:var(--accent-blue)">Commander</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Modal détails -->
+    <div id="bagModal" class="fixed inset-0 hidden z-50 items-center justify-center bg-black/50 p-4">
+      <div class="bg-white rounded-xl shadow-lg max-w-3xl w-full overflow-hidden">
+        <div class="flex justify-between items-start p-4 border-b">
+          <h3 id="modalTitle" class="text-xl font-bold" style="color:var(--brand-dark)"></h3>
+          <button id="closeModal" class="text-2xl px-2" aria-label="Fermer">&times;</button>
+        </div>
+        <div class="p-4 grid md:grid-cols-2 gap-4">
+          <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded">
+          <div>
+            <p id="modalDescription" class="text-gray-700 mb-4"></p>
+            <div id="modalPrice" class="font-bold text-lg" style="color:var(--accent-pink)"></div>
+            <div class="mt-4 flex gap-3">
+              <a id="modalWhats" href="#" target="_blank" class="px-4 py-2 rounded-lg text-white" style="background:var(--accent-pink)">Commander via WhatsApp</a>
+              <a id="modalOrder" href="#" class="px-4 py-2 rounded-lg text-white" style="background:var(--accent-blue)">Demande pro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6" style="color:var(--brand-dark)">Galerie</h2>
+      <p class="text-gray-700 mb-8">Sacs en situation — marchés, boutiques et présentations client.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack3.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack5.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack6.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack7.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack14.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack11.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack10.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        <div class="rounded-xl overflow-hidden shadow"><img src="images/pack13.jpeg" class="w-full h-56 object-cover" alt=""></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS (slider) -->
+  <section id="avis" class="py-16 bg-[var(--bg-light)]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6" style="color:var(--brand-dark)">Avis des vendeuses</h2>
+      <p class="text-gray-700 mb-6">Ce que disent les entrepreneures qui utilisent ChicBag au quotidien.</p>
+
+      <div class="relative">
+        <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow z-10" aria-label="Précédent">‹</button>
+        <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow z-10" aria-label="Suivant">›</button>
+
+        <div id="avisSlider" class="flex gap-6 overflow-x-auto scroll-snap-x snap-mandatory pb-4">
+          <!-- card avis -->
+          <div class="min-w-[280px] md:min-w-[360px] bg-white rounded-xl p-6 shadow snap-start">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="">
+            <h3 class="text-lg font-semibold text-center">Awa M.</h3>
+            <p class="text-sm text-center text-[var(--accent-pink)] mb-3">Vendeuse de pagnes</p>
+            <p class="text-gray-700 text-sm">"Avec ChicBag j'emballe mieux, mes clientes voient la qualité, et je peux livrer sans craindre les déchirures."</p>
+          </div>
+
+          <div class="min-w-[280px] md:min-w-[360px] bg-white rounded-xl p-6 shadow snap-start">
+            <img src="https://randomuser.me/api/portraits/women/42.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="">
+            <h3 class="text-lg font-semibold text-center">Adjo K.</h3>
+            <p class="text-sm text-center text-[var(--accent-pink)] mb-3">Boutiquière</p>
+            <p class="text-gray-700 text-sm">"Finition propre, anse résistante — mes clientes repartent satisfaites et reviennent."</p>
+          </div>
+
+          <div class="min-w-[280px] md:min-w-[360px] bg-white rounded-xl p-6 shadow snap-start">
+            <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="">
+            <h3 class="text-lg font-semibold text-center">Mariam T.</h3>
+            <p class="text-sm text-center text-[var(--accent-pink)] mb-3">Livreuse</p>
+            <p class="text-gray-700 text-sm">"Solide et pratique — j'en ai deux pour mes tournées."</p>
+          </div>
+
+          <!-- ajoute d'autres avis si besoin -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow">
+        <h3 class="text-2xl font-bold mb-4" style="color:var(--brand-dark)">Nous rejoindre</h3>
+        <p class="text-gray-700 mb-4">Pour commandes en gros, partenariat ou commandes personnalisées — contactez-nous.</p>
+        <ul class="space-y-3 text-gray-700">
+          <li><i class="fa-solid fa-location-dot" style="color:var(--accent-blue)"></i> Adidogomé, Lomé</li>
+          <li><i class="fa-solid fa-phone" style="color:var(--accent-blue)"></i> +228 90 00 00 00</li>
+          <li><i class="fa-solid fa-envelope" style="color:var(--accent-blue)"></i> contact@chicbag.tg</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#" class="text-2xl" style="color:var(--accent-pink)"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="text-2xl" style="color:var(--accent-pink)"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-8 rounded-xl shadow space-y-4">
+        <h4 class="text-xl font-semibold" style="color:var(--brand-dark)">Envoyez-nous un message</h4>
+        <input name="fullname" type="text" placeholder="Nom complet" required class="w-full px-4 py-3 border rounded-lg" />
+        <input name="email" type="email" placeholder="Email" required class="w-full px-4 py-3 border rounded-lg" />
+        <textarea name="message" rows="5" placeholder="Votre message / commande" required class="w-full px-4 py-3 border rounded-lg"></textarea>
+        <button type="submit" class="w-full py-3 rounded-lg text-white font-semibold" style="background:var(--accent-pink)">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- GÉOLOCALISATION -->
+  <section id="geolocalisation" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-xl font-bold mb-2" style="color:var(--brand-dark)">Où nous trouver</h3>
+      <p class="text-gray-700 mb-4">Boutique & point de retrait — Adidogomé, Lomé</p>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Adidogom%C3%A9,+Lom%C3%A9,+Togo" target="_blank" class="inline-block px-5 py-3 rounded-full text-white font-medium" style="background:var(--accent-blue)">Obtenir l'itinéraire</a>
+
+      <div class="mt-6 w-full h-[420px] rounded-xl overflow-hidden shadow-lg">
+        <!-- Remplace src par l'iframe que tu obtiendras via Google Maps -> Partager -> Intégrer -->
+        <iframe width="100%" height="100%" style="border:0" loading="lazy"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.0111100350767!2d1.1630721740395977!3d6.191470327465726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1d91b4e35ab%3A0x5ddcfb1b16f3c75a!2sAdidogom%C3%A9%2C%20Lom%C3%A9%2C%20Togo!5e0!3m2!1sfr!2stg!4v1702756253224!5m2!1sfr!2stg">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--brand-dark)] text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-md flex items-center justify-center" style="background:var(--accent-blue)">CB</div>
+          <div>
+            <div class="font-bold">ChicBag</div>
+            <div class="text-sm text-gray-200">Sacs pour femmes entrepreneures</div>
+          </div>
+        </div>
+        <p class="text-gray-300 mt-3">Qualité, solidité et confiance pour vos ventes et livraisons.</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-2">Liens rapides</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#nos-sacs" class="hover:text-[var(--accent-pink)]">Nos Sacs</a></li>
+          <li><a href="#galerie" class="hover:text-[var(--accent-pink)]">Galerie</a></li>
+          <li><a href="#avis" class="hover:text-[var(--accent-pink)]">Avis</a></li>
+          <li><a href="#contact" class="hover:text-[var(--accent-pink)]">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-2">Newsletter</h4>
+        <p class="text-sm text-gray-300 mb-3">Recevez les nouveautés & offres pro.</p>
+        <form action="https://formspree.io/f/YOUR_NEWSLETTER_ID" method="POST" class="flex gap-2">
+          <input name="email" type="email" placeholder="Votre e-mail" required class="px-3 py-2 rounded-md w-full text-black" />
+          <button type="submit" class="px-4 py-2 rounded-md" style="background:var(--accent-pink);color:white">OK</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center text-sm text-gray-300">© 2025 ChicBag — Tous droits réservés</div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    /* Mobile menu toggle */
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    /* Filtering & search */
+    const filter = document.getElementById('categoryFilter');
+    const search = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.bag-card');
+
+    function filterBags(){
+      const cat = filter?.value || 'all';
+      const kw = (search?.value || '').trim().toLowerCase();
+      cards.forEach(card => {
+        const category = card.dataset.category || '';
+        const name = (card.querySelector('h3')?.textContent || '').toLowerCase();
+        const matches = (cat === 'all' || category === cat) && (kw === '' || name.includes(kw));
+        card.style.display = matches ? 'block' : 'none';
+      });
+    }
+    filter?.addEventListener('change', filterBags);
+    search?.addEventListener('input', filterBags);
+
+    /* Modal details on card click (except clicking the internal button) */
+    const modal = document.getElementById('bagModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalPrice = document.getElementById('modalPrice');
+    const closeModal = document.getElementById('closeModal');
+    const modalWhats = document.getElementById('modalWhats');
+
+    document.querySelectorAll('.bag-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
+        modalImage.src = card.querySelector('img')?.src || '';
+        modalTitle.textContent = card.querySelector('h3')?.textContent || '';
+        modalDescription.textContent = card.querySelector('p')?.textContent || '';
+        modalPrice.textContent = card.querySelector('.font-bold')?.textContent || '';
+        // prepare WhatsApp message link (pre-fill text)
+        const text = encodeURIComponent(modalTitle.textContent + ' - ' + modalPrice.textContent + ' Je souhaite commander / obtenir plus d\'infos.');
+        modalWhats.href = 'https://wa.me/22890000000?text=' + text;
+        modal.classList.remove('hidden'); modal.classList.add('flex');
+      });
+    });
+
+    closeModal?.addEventListener('click', () => { modal.classList.add('hidden'); modal.classList.remove('flex'); });
+    modal?.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); }});
+    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) { modal.classList.add('hidden'); modal.classList.remove('flex'); }});
+
+    /* Avis slider previous / next */
+    const slider = document.getElementById('avisSlider');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    nextBtn?.addEventListener('click', () => {
+      slider.scrollBy({ left: slider.clientWidth * 0.9, behavior: 'smooth' });
+    });
+    prevBtn?.addEventListener('click', () => {
+      slider.scrollBy({ left: -slider.clientWidth * 0.9, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
